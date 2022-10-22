@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Home html</title>
+
+    <body>
+      {% if user.is_authenticated %}
+      <li> Hello, {{user.first_name}}</li>
+      <li> <a href="login/logout"> LogOut</a> </li>
+      {% else %}
+      <li> <a href="login/register"</a></li>
+      <li> <a href="login/login"</a></li>
+
+        {% endif %}
+
+
+{% block content %}
+        <form action="add" method="POST">
+{% csrf_token %}
+            Enter 1st number: <input type="text" name="num1"> </br>
+            Enter 2nd number: <input type="text" name="num2"> </br>
+
+            <input type="submit">
+        </form>
+        {% endblock%}
+    </body>
+    </html>
+    
+    

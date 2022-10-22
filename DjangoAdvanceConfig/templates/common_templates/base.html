@@ -1,0 +1,248 @@
+{% load static %} {% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <section class="navigation">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="#">ITTECHBD</a>
+        </div>
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li>
+              <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'about_us' %}">About Us</a>
+            </li>
+            <li>
+              <a href="{% url 'admin' %}">Admin</a>
+            </li>
+            <li>
+              <a href="#">Data Science</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="{% url 'my_sql' %}">My Sql</a>
+                </li>
+                <li>
+                  <a href="{% url 'python' %}">Python</a>
+                </li>
+                <li>
+                  <a href="{% url 'pandas' %}">Pandas</a>
+                </li>
+                <li>
+                  <a href="{% url 'R_Prog' %}">R Programming</a>
+                </li>
+                <li>
+                  <a href="{% url 'tableau' %}">Tableau</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Deep Learning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="{% url 'knn' %}">KNN</a>
+                </li>
+                <li>
+                  <a href="{% url 'random_forest' %}">Random Forest</a>
+                </li>
+                <li>
+                  <a href="{% url 'ann' %}">ANN</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#!">Machine Learning</a>
+              <ul class="nav-dropdown">
+                <li>
+                  <a href="{% url 'pytorch' %}">Pytorch</a>
+                </li>
+                <li>
+                  <a href="{% url 'scikit_learn' %}">Scikit Learn</a>
+                </li>
+                <li>
+                  <a href="{% url 'tensor_flow' %}">Tensor FLow</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    {% block contents %}{% endblock contents %}
+  </body>
+  <!-- partial -->
+
+  <section class="footer-section">
+    <div class="container">
+      <div class="row footer-section-row">
+        <div class="col-md-4">
+          <div class="address">
+            <div class="left-icon">
+              <img src="{% static 'images/email.png' %}" />
+            </div>
+            <div class="right-text">
+              <h3>Address</h3>
+              <p>Shree Ramakrishna Ashrama</p>
+              <p>Madanpur-Rampur, Kalahandi, Odisha -766102</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="address">
+            <div class="left-icon">
+              <img src="{% static 'images/location.png' %}" />
+            </div>
+            <div class="right-text">
+              <h3>Mail Id</h3>
+              <p>srka_mrampur@yahoo.co.in</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="address">
+            <div class="left-icon">
+              <img src="{% static 'images/phone.png' %}" />
+            </div>
+            <div class="right-text">
+              <h3>Phone</h3>
+              <p>+91 9437040140,</p>
+              <p>+91 7873708010</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <h3 class="footer-title">
+            <span class="footer-title-text">Quick Link</span
+            ><span class="footer-title-underline"></span>
+          </h3>
+          <ul class="quick-link-list">
+            <li><a href="#"> The Secretary</a></li>
+            <li><a href="#"> Shree Ramakrishna Dev</a></li>
+            <li><a href="#"> Maa Sarada Devi</a></li>
+            <li><a href="#"> Swami Vivekananda</a></li>
+            <li><a href="#"> Education</a></li>
+            <li><a href="#"> Medical</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="footer-title title-transparent">Quick Link</h3>
+          <ul class="quick-link-list">
+            <li><a href="#"> Old Age Home</a></li>
+            <li><a href="#"> Video Archive</a></li>
+            <li><a href="#"> News & Events</a></li>
+            <li><a href="#"> News & Events</a></li>
+            <li><a href="#"> Youth Welfare Programme</a></li>
+            <li><a href="#"> Relief Work</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="footer-title title-transparent">Quick Link</h3>
+          <ul class="quick-link-list">
+            <li><a href="#"> Donation</a></li>
+            <li><a href="#"> Future Plan</a></li>
+            <li><a href="#"> Feedback</a></li>
+            <li><a href="#"> Site Map</a></li>
+            <li><a href="#"> Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="footer-title">
+            <span class="footer-title-text">Get Updates</span
+            ><span class="footer-title-underline"></span>
+          </h3>
+          <p class="newsletter">Signup to Our Newsletter.</p>
+          <form action="">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control form-control-new"
+                id="usr"
+                name="username"
+                placeholder="Enter Your Mail Id"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary subscribe">
+              Subscribe
+            </button>
+          </form>
+          <div id="social">
+            <a class="facebookBtn smGlobalBtn" href="#"></a>
+            <a class="twitterBtn smGlobalBtn" href="#"></a>
+            <a class="youtubeBtn smGlobalBtn" href="#"></a>
+            <a class="linkedinBtn smGlobalBtn" href="#"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer-section-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 footer-bottom-left">
+          <p>© All Rights Reserved Shree Ramakrishna Ashram</p>
+        </div>
+        <div class="col-md-6 footer-bottom-right">
+          <p>Developed by <a href="#">All India On-Line Pvt. Ltd.</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End of .container -->
+  {% block footer %} {% endblock footer %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/nave.js' %}"></script>
+  {% comment %}
+  <script src="{% static 'js/nave.js' %}"></script>
+  {% endcomment %}
+</html>
